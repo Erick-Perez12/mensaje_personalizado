@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mensaje</title>
+    <title>Mensaje</title>
+    <link rel="stylesheet" href="../static/css/mensaje.css">
 </head>
 <body>
-    <h1>Mensaje</h1>
-    <p>Bienvenido {{userData.nombre}} de {{userData.dedicatoria}}</p>
+    <h1 class="para ">Bienvenido {{userData.nombre}}</h1>
     <h2>{{messageResult[0]['mensaje_escrito']}}</h2>
+    <h1 class="de">{{userData.dedicatoria}}</h1>
+    <div class="btn">
+        <a href="/dibujo"><i class="fab fa-btn" ></i>continuar</a>
+    </div>
 </body>
 </html>

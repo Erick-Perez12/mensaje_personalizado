@@ -18,7 +18,7 @@ def index():
         result = LoginController.iniciate_session(password)
         if result == 1:
             session['password'] = password
-            return redirect('/dibujo')
+            return redirect('/principal')
         else:
             flash('Contraseña incorrecta', 'error')
 

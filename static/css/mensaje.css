@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    margin-left: 10%; 
+    margin-right: 10%; 
+    opacity: 0; /* Inicialmente invisible */
+    animation: aparecer 4s ease forwards 2s; /* Animación de aparición */
+}
+
+.para {
+    text-align: left;
+    margin-left: 10%; /* Ajusta este valor según tus necesidades */
+    opacity: 0; /* Inicialmente invisible */
+    animation: aparecer 4s ease forwards; /* Animación de aparición */
+}
+
+.de {
+    text-align: right;
+    margin-right: 10%; 
+    opacity: 0; /* Inicialmente invisible */
+    animation: aparecer 4s ease forwards 4s; /* Animación de aparición */
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Definir la animación de aparición */
+@keyframes aparecer {
+    from {
+        opacity: 0; /* Comienza completamente transparente */
+    }
+    to {
+        opacity: 1; /* Termina completamente visible */
+    }
+}
