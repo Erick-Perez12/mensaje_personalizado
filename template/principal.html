@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensaje</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Itim&family=Kaushan+Script&family=Pacifico&family=Permanent+Marker&family=Protest+Revolution&family=Protest+Riot&family=Protest+Strike&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/mensaje.css">
 </head>
 <body>
-    <h1 class="para ">Bienvenido {{userData.nombre}}</h1>
-    <h2>{{messageResult[0]['mensaje_escrito']}}</h2>
+    <video autoplay muted loop id="video-background">
+        <source src="../static/src/campo.mp4" type="video/mp4">
+    </video>
+    <div id="video-overlay"></div>
+    <h1 class="para ">Queria decirte {{userData.nombre}}</h1>
+    <h2>" {{messageResult[0]['mensaje_escrito']}} "</h2>
     <h1 class="de">{{userData.dedicatoria}}</h1>
     <div class="btn">
         <a href="/dibujo"><i class="fab fa-btn" ></i>continuar</a>

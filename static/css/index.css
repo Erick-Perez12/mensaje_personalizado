@@ -5,7 +5,7 @@
 }
 
 html, body {
-    background-image: url(/static/image/fondo.jpg);
+    background-image: url(/static/src/fondo.jpg);
     background-size: cover;
     display: grid;
     height: 100vh;

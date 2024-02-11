@@ -4,11 +4,20 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+}
+
+h2, .para, .de{
+    font-family: 'Caveat Brush', cursive;
+    color: black;
+    text-shadow: 
+        -2px -2px 0 #ffffff,  
+         2px -2px 0 #ffffff,  
+        -2px  2px 0 #ffffff,  
+         2px  2px 0 #ffffff;  /*Definición del borde negro */
 }
 
 h2 {
+    font-size: 40px;
     text-align: center;
     margin-left: 10%; 
     margin-right: 10%; 
@@ -17,6 +26,7 @@ h2 {
 }
 
 .para {
+    font-size: 40px;
     text-align: left;
     margin-left: 10%; /* Ajusta este valor según tus necesidades */
     opacity: 0; /* Inicialmente invisible */
@@ -24,6 +34,7 @@ h2 {
 }
 
 .de {
+    font-size: 40px;
     text-align: right;
     margin-right: 10%; 
     opacity: 0; /* Inicialmente invisible */
@@ -31,6 +42,7 @@ h2 {
 }
 
 .btn {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -39,12 +51,69 @@ h2 {
 
 .btn a {
     text-decoration: none;
-    color: white;
-    background-color: #007BFF;
+    color: rgb(255, 255, 255);
     padding: 10px 20px;
     border-radius: 5px;
+    border: 2px solid #ffffff; /* Contorno blanco */
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgb(255, 255, 255); /* Sombra borrosa blanca */
+    transition: box-shadow 0.3s ease; /* Transición suave */
 }
 
+.btn a:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8); /* Aumentar la intensidad de la sombra al pasar el mouse */
+    background-color: #ffffff; /* Cambiar el fondo a blanco */
+    color: #000000; /* Cambiar el color del texto a negro */
+}
+
+
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    background-size: cover;
+}
+
+#video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(ellipse at center,rgba(255, 255, 255, 0) 0%,rgba(15, 1, 73, 0.445) 69%,rgba(0, 0, 0, 0.815) 100%);
+}
+
+
+
+
+  
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Agrega un poco de espacio alrededor del contenido en dispositivos móviles */
+    }
+
+    h2, .para, .de {
+        margin-left: 0; /* Elimina el margen izquierdo en dispositivos móviles */
+        margin-right: 0; /* Elimina el margen derecho en dispositivos móviles */
+        text-align: center; /* Centra el texto en dispositivos móviles */
+    }
+
+    .btn {
+        margin-top: 15px; /* Reduce el espacio superior entre el botón y el texto en dispositivos móviles */
+    }
+
+    #video-background {
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+    }
+}
+  
 /* Definir la animación de aparición */
 @keyframes aparecer {
     from {
