@@ -12,17 +12,21 @@ app = Flask(__name__, template_folder='template', static_folder='static')
 app.secret_key = 'h2g3h32gh2'
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
+def login():
     if request.method == 'POST':
         password = request.form['password']
         result = LoginController.iniciate_session(password)
         if result == 1:
             session['password'] = password
-            return redirect('/principal')
+            return redirect('/juego')
         else:
             flash('Contraseña incorrecta', 'error')
 
-    return render_template('index.html')
+    return render_template('login.html')
+
+@app.route('/juego')
+def index():
+    return render_template('juego.html')
 
 @app.route('/principal', methods=['GET', 'POST'])
 def principal():

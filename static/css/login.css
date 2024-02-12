@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+html, body {
+    background-size: cover;
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    place-items: center;
+}
+
+.container {
+    max-width: 350px;
+    width: 90%; /* Cambiamos el ancho al 90% para hacerlo más adaptable */
+    padding: 25px 20px; /* Reducimos el padding para adaptarlo mejor a pantallas pequeñas */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    backdrop-filter: blur(8px);
+}
+
+.container h1 {
+    color: white;
+    text-align: center;
+    margin: 20px 0 30px 0; /* Reducimos el margen inferior para ocupar menos espacio */
+    position: relative;
+    font-size: 1.5em; /* Cambiamos el tamaño de la fuente para que sea más legible en pantallas pequeñas */
+    text-shadow: 
+        -1px -1px 0 #ff4757,  
+        1px -1px 0 #ff4757,
+        -1px  1px 0 #ff4757,
+        1px  1px 0 #ff4757;/*Definición del borde negro */
+}
+
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Asegura que el formulario ocupe toda la altura del contenedor */
+}
+
+.container form .input-box {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 400px; /* Ajusta el ancho máximo según tus necesidades */
+    height: 10px;
+    position: relative;
+    margin-bottom: 30px; /* Espacio entre el input y el botón */
+}
+
+.container form .input-box input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: none;
+    color:white;
+}
+
+.input-box input::placeholder{
+    color: white;
+}
+
+.input-box i{
+    position: absolute;
+    right: 3%;
+    color: white;
+}
+
+.container form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 100px;
+    border-radius: 10px;
+    background: none;
+    border: 2px solid rgb(255, 255, 255, .2);
+    color: white;
+    cursor: pointer;
+}
+
+.container form button:hover{
+    background: white;
+    color: #000;
+}
+
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    background-size: cover;
+}
+
+.corazon{
+    position: absolute;
+    bottom: 95px;
+    width: 60px;
+    height:60px;
+    background: #ff4757;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px #ff4757;
+    animation: animate .9s linear infinite;
+}
+
+.corazon::before{
+    content: '';
+    position: absolute;
+    top:-50%;
+    width: 60px;
+    height: 60px;
+    background: #ff4757;
+    border-radius: 50%;
+    box-shadow: -10px -10px 90px #ff4757;
+}
+
+.corazon::after{
+    content: '';
+    position: absolute;
+    right:-50%;
+    width: 60px;
+    height: 60px;
+    background: #ff4757;
+    border-radius: 50%;
+    box-shadow: 10px 10px 90px #ff4757;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+    }
+    80%{
+        transform: rotate(-45deg) scale(1.0);
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.8);
+    }
+}

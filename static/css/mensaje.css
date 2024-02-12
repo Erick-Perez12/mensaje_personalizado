@@ -14,30 +14,26 @@ h2, .para, .de{
          2px -2px 0 #ffffff,  
         -2px  2px 0 #ffffff,  
          2px  2px 0 #ffffff;  /*Definición del borde negro */
+    font-size: 40px;
+    opacity: 0;
 }
 
 h2 {
-    font-size: 40px;
     text-align: center;
     margin-left: 10%; 
-    margin-right: 10%; 
-    opacity: 0; /* Inicialmente invisible */
+    margin-right: 10%;
     animation: aparecer 4s ease forwards 2s; /* Animación de aparición */
 }
 
 .para {
-    font-size: 40px;
     text-align: left;
     margin-left: 10%; /* Ajusta este valor según tus necesidades */
-    opacity: 0; /* Inicialmente invisible */
     animation: aparecer 4s ease forwards; /* Animación de aparición */
 }
 
 .de {
-    font-size: 40px;
     text-align: right;
     margin-right: 10%; 
-    opacity: 0; /* Inicialmente invisible */
     animation: aparecer 4s ease forwards 4s; /* Animación de aparición */
 }
 
@@ -93,13 +89,13 @@ h2 {
   
 @media (max-width: 768px) {
     body {
-        padding: 10px; /* Agrega un poco de espacio alrededor del contenido en dispositivos móviles */
+        padding: 5px; /* Agrega un poco de espacio alrededor del contenido en dispositivos móviles */
     }
 
     h2, .para, .de {
         margin-left: 0; /* Elimina el margen izquierdo en dispositivos móviles */
         margin-right: 0; /* Elimina el margen derecho en dispositivos móviles */
-        text-align: center; /* Centra el texto en dispositivos móviles */
+        font-size: 30px;
     }
 
     .btn {

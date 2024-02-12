@@ -984,3 +984,29 @@ mask-image: linear-gradient(to top, transparent 40%, #079097 80%) !important;
 .not-loaded * {
   animation-play-state: paused !important;
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    align-items: center; 
+  }
+  .flowers{
+    margin-top: 95%;
+  }
+}
+
+.mensaje{
+  position: fixed;
+  color: white;
+  z-index: 1;
+  top: 8%;
+  text-align: center;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #0fa,
+  0 0 82px #0fa,
+  0 0 92px #0fa,
+  0 0 102px #0fa,
+  0 0 151px #0fa;
+}
