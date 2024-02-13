@@ -48,14 +48,14 @@ setInterval(() => {
   hearts.forEach((heart) => heart.update());
 }, 10);
 
-const btn = document.querySelector('.joker');
+/*const btn = document.querySelector('.joker');
 btn.addEventListener('click',()=>{
   window.location.href = '/principal';
-});
+});*/
 
-/*
+
 let clickCount = 0;
-const CM_TO_PIXEL = 2 * 37.8; // Aproximadamente 5 cm en píxeles
+const CM_TO_PIXEL = 1.5*37.8; // Aproximadamente 5 cm en píxeles
 
 window.addEventListener("load", () => {
   const btn = document.querySelector('.joker');
@@ -64,7 +64,7 @@ window.addEventListener("load", () => {
     clickCount++;
     if (clickCount === 4) {
       // Redirigir al otro HTML en el cuarto clic
-      window.location.href = '/login';
+      window.location.href = '/principal';
     }
   });
 
@@ -81,8 +81,8 @@ window.addEventListener("load", () => {
       const maxX = windowWidth - buttonWidth;
       const maxY = windowHeight - buttonHeight;
 
-      const randomX = getRandomOffset(2, CM_TO_PIXEL);
-      const randomY = getRandomOffset(2, CM_TO_PIXEL);
+      const randomX = getRandomOffset(1.5, CM_TO_PIXEL);
+      const randomY = getRandomOffset(1.5, CM_TO_PIXEL);
 
       btn.style.top = `${randomY}px`;
       btn.style.left = `${randomX}px`;
@@ -96,7 +96,7 @@ window.addEventListener("load", () => {
   }
 });
 
-*/
+
 
 $(document).ready(function () {
     $('.container').mouseenter(function () {

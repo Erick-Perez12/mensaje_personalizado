@@ -36,9 +36,13 @@ def principal():
     messageResult = ModelMessage.get_message(name)
     return render_template('principal.html',userData= userData, messageResult = messageResult)
 
-@app.route('/dibujo')
+@app.route('/dibujo', methods=['GET', 'POST'])
 def dibujo():
-    return render_template('dibujo.html')
+    username_ = session['password']
+    userData = ModelUser.get_user_username(username_)
+    name = userData['nombre']
+    messageResult = ModelMessage.get_message(name)
+    return render_template('dibujo.html', messageResult = messageResult)
 
 if __name__ == "__main__":
     app.run(debug=True)
