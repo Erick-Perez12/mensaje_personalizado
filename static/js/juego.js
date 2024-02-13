@@ -40,12 +40,23 @@ class Heart {
 }
 
 setInterval(() => {
-  const heart = new Heart(Math.random() * window.innerWidth, -100);
+  const heart = new Heart(
+    Math.random() * (window.innerWidth - 100), // Coordenada x dentro del ancho de la ventana
+    -100
+  );
   hearts.push(heart);
 }, 200);
 
 setInterval(() => {
-  hearts.forEach((heart) => heart.update());
+  hearts.forEach((heart, index) => {
+    heart.update(); // Actualiza la posición del corazón
+
+    // Elimina el corazón si ha caído completamente fuera de la ventana
+    if (heart.y > window.innerHeight+10) {
+      heart.el.remove(); // Elimina el elemento del DOM
+      hearts.splice(index, 1); // Elimina el corazón del array
+    }
+  });
 }, 10);
 
 /*const btn = document.querySelector('.joker');
@@ -62,9 +73,25 @@ window.addEventListener("load", () => {
 
   btn.addEventListener('click', () => {
     clickCount++;
-    if (clickCount === 4) {
+    if (clickCount === 5) {
       // Redirigir al otro HTML en el cuarto clic
       window.location.href = '/principal';
+    }
+
+    if (clickCount ===1) {
+      btn.textContent = "¡Otra vez!";
+    }
+
+    if (clickCount ===2) {
+      btn.textContent = "¡Una más!";
+    }
+
+    if (clickCount ===3) {
+      btn.textContent = "¡Ahora si!";
+    }
+
+    if (clickCount ===4) {
+      btn.textContent = "¡JAJAJA!";
     }
   });
 
@@ -72,7 +99,7 @@ window.addEventListener("load", () => {
 
   function moveButton() {
     // Solo mover el botón en los tres primeros clics
-    if (clickCount <= 3) {
+    if (clickCount <= 4) {
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
       const buttonWidth = btn.offsetWidth;
